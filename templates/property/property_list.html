@@ -1,0 +1,34 @@
+{% extends 'partials/base.html '%}
+{% load static %}
+{% block content %}
+<div class="property-list-container">
+    <h1>Property Listings</h1>
+    <ul>
+        {% for property in properties %}
+        <li class="property-item">
+            <div class="property-details">
+                <strong>{{ property.name }}</strong><br>
+                {{ property.address }}, {{ property.city }}<br>
+                Rent: ₹{{ property.rent_per_month }}<br>
+                Available Rooms: {{ property.available_rooms }}<br>
+
+                {% if property.property_photo %}
+                <img src="{{ property.property_photo.url }}" alt="Property Photo" class="property-photo">
+                {% endif %}
+            </div>
+            <p>Owner Phone: {{ property.owner.username }}</p>
+            <p>Status: {% if property.is_rented %}Rented{% else %}Available{% endif %}</p>
+
+            <a href="{% url 'property:toggle_rental_status' property.id %}" class="status-toggle-link">
+                {% if property.is_rented %}
+                Mark as Available
+                {% else %}
+                Mark as Rented
+                {% endif %}
+            </a>
+        </li>
+        {% endfor %}
+    </ul>
+    <a href="{% url 'owner:dashboard'  %}" class="btn btn-secondary back-button">Back</a>
+</div>
+{% endblock %}

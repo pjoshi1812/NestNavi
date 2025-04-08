@@ -1,0 +1,57 @@
+{% extends 'partials/base.html '%}
+{% load static %}
+{% block content %}
+<div class="owner-dashboard">
+    <h1>Welcome, {{ user.username }}!</h1>
+    <a href="{% url 'property:property_create' %}">Create a new property</a>
+    <a href="{% url 'property:property_list' %}">property</a>
+    <h2>Your Properties</h2>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Property Name</th>
+                
+                <th>Status</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for property in properties %}
+            <tr>
+                <td>{{ property.address }}</td>
+                <td>
+                    {% if property.is_rented %}
+                    Rented
+                    {% else %}
+                    Available
+                    {% endif %}
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+    <h2>Tenant Inquiries</h2>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Property</th>
+                <th>Tenant</th>
+                <th>Inquiry Type</th>
+                <th>Message</th>
+                <th>Date</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for inquiry in inquiries %}
+            <tr>
+                <td>{{ inquiry.property.address }}</td>
+                <td>{{ inquiry.tenant.username }}</td>
+                <td>{{ inquiry.inquiry_type }}</td>
+                <td>{{ inquiry.message }}</td>
+                <td>{{ inquiry.created_at }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+{% endblock %}

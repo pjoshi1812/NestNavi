@@ -1,0 +1,9 @@
+{% extends 'partials/base.html' %}
+{% load static %}
+{% block content %}
+<div class="container mt-4">
+    <h3>Inquiry Submitted Successfully!</h3>
+    <p>Thank you for your interest. The property owner will contact you shortly.</p>
+    <a href="{% url 'home:index'  %}">Back</a>
+</div>
+{% endblock %}

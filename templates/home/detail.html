@@ -1,0 +1,28 @@
+{% extends 'partials/base.html '%}
+{% load static %}
+{% block content %}
+<div class="details-container mt-4">
+    <div class="details-card">
+        {% if property.property_photo %}
+        <img src="{{ property.property_photo.url }}" alt="{{ property.name }}">
+        {% endif %}
+        <div class="details-card-body">
+            <h5 class="details-card-title">{{ property.name }}</h5>
+            <p class="details-card-text"><strong>Address: </strong> {{ property.address }}</p>
+            <p class="details-card-text"><strong>Rent:</strong> ₹{{ property.rent_per_month }}/month</p>
+            <p class="details-card-text"><strong>Amenities:</strong> {{ property.amenities }}</p>
+            <p class="details-card-text"><strong>Available Rooms:</strong> {{ property.available_rooms }}</p>
+            <p class="details-card-text">
+                <strong>Status:</strong>
+                {% if property.is_rented %}
+                Rented
+                {% else %}
+                Available
+                {% endif %}
+            </p>
+            <a href="/" class="btn btn-secondary">Back to Listings</a>
+            <a href="{% url 'home:inquiry' property.id %}" class="btn btn-primary">Express Interest</a>
+        </div>
+    </div>
+</div>
+{% endblock %}

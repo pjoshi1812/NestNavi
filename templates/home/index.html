@@ -1,0 +1,54 @@
+{% extends 'partials/base.html' %}
+
+{% load static %}
+{% block content %}
+
+<body>
+<main>
+    <div class="container mt-4">
+        <div class="row">
+            {% if properties %}
+                {% for property in properties %}
+                <div class="col-md-4 mb-4">
+                    <div class="card">
+                        {% if property.property_photo %}
+                        <img src="{{ property.property_photo.url }}" class="card-img-top" alt="Property Image">
+                        {% else %}
+                        <img src="https://via.placeholder.com/300x200" class="card-img-top" alt="Default Property Image">
+                        {% endif %}
+
+                        {% if property.is_rented %}
+                        <!-- Overlay or badge for unavailable properties -->
+                        <div class="position-absolute top-0 start-0 bg-danger text-white p-2" style="opacity: 0.85;">
+                            Not Available
+                        </div>
+                        {% endif %}
+
+                        <div class="card-body">
+                            <h5 class="card-title">{{ property.name }}</h5>
+                            <p class="card-text">{{ property.city }}, {{ property.state }}</p>
+                            <p class="card-text">₹ {{ property.rent_per_month }}/month</p>
+                            <p class="card-text"><strong>Amenities:</strong> {{ property.amenities }}</p>
+                            <p class="card-text"><strong>Available Rooms:</strong> {{ property.available_rooms }}</p>
+
+                            {% if property.is_rented %}
+                            <button class="btn btn-secondary" disabled>Not Available</button>
+                            {% else %}
+                            <a href="{% url 'home:detail' property.id %}" class="btn btn-primary">Book a Visit</a>
+                            {% endif %}
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
+            {% else %}
+                <div class="col-12">
+                    <div class="alert alert-info text-center" role="alert">
+                        No properties are currently available.
+                    </div>
+                </div>
+            {% endif %}
+        </div>
+    </div>
+</main>
+</body>
+{% endblock content %}

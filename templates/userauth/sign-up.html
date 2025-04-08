@@ -1,0 +1,66 @@
+{% extends 'partials/base.html' %}
+
+{% load static %}
+{% block content %}
+<section class="vh-100 bg-image">
+  <div class="mask d-flex align-items-center h-100 gradient-custom-3">
+    <div class="container h-100">
+      <div class="row d-flex justify-content-center align-items-center h-100">
+        <div class="col-12 col-md-9 col-lg-7 col-xl-6">
+          <div class="card" style="border-radius: 15px;">
+            
+            <div class="card-body p-5">
+              <h2 class="text-uppercase text-center mb-5">Create an account</h2>
+              {% if form.errors %}
+              <div class="alert alert-danger">
+                <strong>{{ form.errors }}</strong>
+              </div>
+              {% endif %}
+              
+              <form method="POST">
+                {% csrf_token %}
+                <div data-mdb-input-init class="form-outline mb-4">
+                    {{form.username}}
+                </div>
+                <div data-mdb-input-init class="form-outline mb-4">
+                    {{form.email}}
+                </div>
+                <div data-mdb-input-init class="form-outline mb-4">
+                    {{form.password1}}
+                </div>
+                <div data-mdb-input-init class="form-outline mb-4">
+                    {{form.password2}}
+                </div>
+
+                <!-- Add role selection here -->
+                <div class="mb-4">
+                  <label for="id_role" class="form-label">Select your role:</label>
+                  <div class="d-flex gap-3">
+                      <label class="btn btn-outline-secondary">
+                          {{ form.role.0 }}(Tenant)
+                      </label>
+                      <label class="btn btn-outline-secondary">
+                          {{ form.role.1 }} 
+                      </label>
+                  </div>
+              </div>
+              
+
+                <div class="d-flex justify-content-center">
+                  <button type="submit" data-mdb-button-init
+                    data-mdb-ripple-init class="btn btn-success btn-block btn-lg gradient-custom-4 text-body" style="    background-color: #007bff;">Register</button>
+                </div>
+
+                <p class="text-center text-muted mt-5 mb-0">Have already an account? <a href="{% url 'userauth:sign-in' %}"
+                    class="fw-bold text-body"><u>Login here</u></a></p> 
+
+              </form>
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+{% endblock content %}

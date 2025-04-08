@@ -1,0 +1,505 @@
+/* General Reset */
+body, html {
+  margin: 0;
+  padding: 0;
+  font-family: 'Arial', sans-serif;
+  box-sizing: border-box;
+  flex-direction: column;
+  min-height: 100vh; 
+  display: flex;
+}
+main {
+  flex: 1; /* Pushes the footer to the bottom when content is small */
+}
+
+/* Navbar Styling */
+.navbar {
+  background-color: #f8f9fa;
+  border-bottom: 2px solid #007bff;
+}
+
+.navbar .navbar-brand {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #007bff;
+  text-decoration: none;
+}
+
+.navbar .navbar-brand img {
+  margin-right: 10px;
+  vertical-align: middle;
+}
+
+.navbar .btn-outline-primary, .navbar .btn-outline-danger {
+  border-radius: 20px;
+  font-weight: bold;
+}
+
+.navbar .btn-outline-primary:hover, .navbar .btn-outline-danger:hover {
+  background-color: #007bff;
+  color: #fff;
+}
+
+/* Container and Cards */
+.container {
+  margin-top: 20px;
+}
+
+.card {
+  border: none;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+.card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.card-img-top {
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  height: 200px;
+  object-fit: cover;
+}
+
+.card-title {
+  font-size: 1.25rem;
+  font-weight: bold;
+  color: #343a40;
+}
+
+.card-text {
+  color: #6c757d;
+}
+
+.btn-primary {
+  background-color: #007bff;
+  border: none;
+  border-radius: 20px;
+  font-weight: bold;
+  padding: 10px 20px;
+  transition: background-color 0.3s ease;
+}
+
+.btn-primary:hover {
+  background-color: #0056b3;
+}
+
+/* Amenities and Availability */
+.card-text strong {
+  color: #343a40;
+}
+/* Footer Styling */
+footer {
+  background-color: #f8f9fa;
+  padding: 20px;
+  text-align: center;
+  font-size: 0.9rem;
+  color: #6c757d;
+  border-top: 2px solid #007bff;
+}
+.owner-dashboard{
+  flex: 1;
+}
+
+/* Details Page */
+.details-container {
+  display: flex;
+  justify-content: center;
+  margin: 20px;
+}
+
+.details-card {
+  width: 90%;
+  max-width: 800px;
+  border: 1px solid #eaeaea;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+}
+
+.details-card img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+
+.details-card-body {
+  padding: 20px;
+}
+
+.details-card-title {
+  font-size: 1.75rem;
+  font-weight: bold;
+  color: #343a40;
+  margin-bottom: 10px;
+}
+
+.details-card-text {
+  font-size: 1rem;
+  color: #6c757d;
+  margin-bottom: 10px;
+}
+
+.details-card-text strong {
+  color: #343a40;
+}
+
+.details-card .btn {
+  margin-top: 10px;
+  margin-right: 10px;
+  padding: 10px 20px;
+  border-radius: 20px;
+  transition: background-color 0.3s ease;
+}
+
+.details-card .btn-primary {
+  background-color: #007bff;
+  border: none;
+  color: white;
+}
+
+.details-card .btn-primary:hover {
+  background-color: #0056b3;
+}
+
+.details-card .btn-secondary {
+  background-color: #6c757d;
+  border: none;
+  color: white;
+}
+
+.details-card .btn-secondary:hover {
+  background-color: #5a6268;
+}
+/* Inquiry Page */
+
+.container h3 {
+  font-size: 1.75rem;
+  color: #007bff;
+  font-weight: bold;
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+.container p {
+  font-size: 1rem;
+  color: #6c757d;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.container a {
+  display: block;
+  width: 200px;
+  margin: 0 auto;
+  text-align: center;
+  text-decoration: none;
+  font-weight: bold;
+  padding: 10px 20px;
+  color: white;
+  background-color: #007bff;
+  border-radius: 20px;
+  transition: background-color 0.3s ease;
+}
+
+.container a:hover {
+  background-color: #0056b3;
+}
+
+.container {
+  flex: 1; /* Ensures content fills space above the footer */
+}
+/* Owner Dashboard */
+.owner-dashboard h1, .owner-dashboard h2 {
+  text-align: center;
+  color: #007bff;
+  margin-bottom: 20px;
+}
+
+.owner-dashboard h1 {
+  font-size: 2rem;
+  font-weight: bold;
+}
+
+.owner-dashboard h2 {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.owner-dashboard p {
+  text-align: center;
+  font-size: 1rem;
+  color: #6c757d;
+  margin-bottom: 30px;
+}
+
+/* Dashboard Links */
+.owner-dashboard a {
+  display: inline-block;
+  margin: 10px;
+  padding: 10px 20px;
+  font-size: 1rem;
+  color: white;
+  text-decoration: none;
+  background-color: #007bff;
+  border-radius: 20px;
+  transition: background-color 0.3s ease;
+}
+
+.owner-dashboard a:hover {
+  background-color: #0056b3;
+}
+
+/* Dashboard Tables */
+.owner-dashboard .table {
+  width: 100%;
+  max-width: 90%;
+  margin: 20px auto;
+  border-collapse: collapse;
+  border: 1px solid #eaeaea;
+  background-color: white;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.owner-dashboard .table thead {
+  background-color: #007bff;
+  color: white;
+  font-weight: bold;
+  text-align: left;
+}
+
+.owner-dashboard .table th, .owner-dashboard .table td {
+  padding: 12px;
+  border: 1px solid #eaeaea;
+  text-align: left;
+}
+
+.owner-dashboard .table tbody tr:nth-child(even) {
+  background-color: #f8f9fa;
+}
+
+.owner-dashboard .table tbody tr:hover {
+  background-color: #eaf4ff;
+}
+/* Property Form Page */
+.property-form-container {
+  width: 60%;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #f8f9fa;
+  border: 1px solid #eaeaea;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.property-form-container h1 {
+  text-align: center;
+  color: #007bff;
+  font-size: 1.75rem;
+  margin-bottom: 20px;
+  font-weight: bold;
+}
+
+.property-form-container form {
+  display: flex;
+  flex-direction: column;
+}
+
+.property-form-container form button {
+  align-self: center;
+  padding: 10px 20px;
+  font-size: 1rem;
+  color: white;
+  background-color: #007bff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.property-form-container form button:hover {
+  background-color: #0056b3;
+}
+
+.property-form-container form p {
+  margin-bottom: 15px;
+}
+
+.property-form-container form label {
+  font-weight: bold;
+  color: #333;
+}
+
+.property-form-container form input,
+.property-form-container form select,
+.property-form-container form textarea {
+  width: 100%;
+  padding: 10px;
+  margin-top: 5px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-sizing: border-box;
+}
+
+.property-form-container form input:focus,
+.property-form-container form select:focus,
+.property-form-container form textarea:focus {
+  border-color: #007bff;
+  outline: none;
+  box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+}
+/* Property List Page */
+.property-list-container {
+  width: 80%;
+  margin: 20px auto;
+  padding: 20px;
+  background-color: #f8f9fa;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.property-list-container h1 {
+  text-align: center;
+  font-size: 2rem;
+  color: #007bff;
+  margin-bottom: 20px;
+}
+
+.property-list-container ul {
+  list-style: none;
+  padding: 0;
+}
+
+.property-item {
+  border: 1px solid #eaeaea;
+  border-radius: 10px;
+  padding: 15px;
+  margin-bottom: 20px;
+  background-color: white;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+}
+
+.property-details {
+  margin-bottom: 10px;
+}
+
+.property-photo {
+  display: block;
+  width: 200px;
+  height: auto;
+  margin-top: 10px;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.status-toggle-link {
+  display: inline-block;
+  margin-top: 10px;
+  padding: 8px 12px;
+  background-color: #007bff;
+  color: white;
+  text-decoration: none;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+}
+
+.status-toggle-link:hover {
+  background-color: #0056b3;
+}
+
+.back-button {
+  display: block;
+  width: 150px;
+  margin: 20px auto 0;
+  padding: 10px 15px;
+  text-align: center;
+  background-color: #6c757d;
+  color: white;
+  text-decoration: none;
+  border-radius: 5px;
+}
+
+.back-button:hover {
+  background-color: #5a6268;
+}
+/* about us  */
+/* About Us Page Specific Styles */
+.about-us-page a {
+  text-decoration: none;
+}
+
+/* Hero Section */
+.about-us-page .hero-section {
+  background: linear-gradient(135deg, #6c63ff, #6dd5ed);
+  color: white;
+  text-align: center;
+  padding: 80px 20px;
+  clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
+}
+
+.about-us-page .hero-section h1 {
+  font-size: 3rem;
+  font-weight: 600;
+}
+
+.about-us-page .hero-section p {
+  font-size: 1.2rem;
+  margin-top: 15px;
+}
+
+/* About Section Container */
+.about-us-page .aboutcontainer {
+  padding: 50px 0;
+}
+
+/* Card Section */
+.about-us-page .aboutcontainer .icon-box {
+  font-size: 3rem;
+  color: #6c63ff;
+  transition: all 0.3s ease;
+}
+
+.about-us-page .aboutcontainer .icon-box:hover {
+  color: #ff7eb3;
+  transform: scale(1.2);
+}
+
+.about-us-page .aboutcontainer .card {
+  border: none;
+  background: white;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border-radius: 15px;
+}
+
+.about-us-page .aboutcontainer .card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+.about-us-page .aboutcontainer .card h4 {
+  font-weight: 600;
+  margin-top: 20px;
+}
+
+/* Why Choose Us Section */
+.about-us-page .aboutcontainer .list-group-item {
+  border: none;
+  padding-left: 0;
+}
+
+.about-us-page .aboutcontainer .list-group-item .text-primary {
+  color: #6c63ff;
+}
+
+.about-us-page .aboutcontainer .fw-bold {
+  font-weight: 600;
+}
+
+/* Vision Section */
+.about-us-page .aboutcontainer .col-md-6 p {
+  font-size: 1.1rem;
+  color: #333;
+}

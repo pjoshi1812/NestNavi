@@ -1,0 +1,30 @@
+{% extends 'partials/base.html' %}
+{% block content %}
+<div class="container mt-4">
+    <h2>Tenant Inquiries</h2>
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>#</th>
+                <th>Tenant</th>
+                <th>Property</th>
+                <th>Inquiry Type</th>
+                <th>Message</th>
+                <th>Date</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for inquiry in inquiries %}
+            <tr>
+                <td>{{ forloop.counter }}</td>
+                <td>{{ inquiry.tenant.username }}</td>
+                <td>{{ inquiry.property.name }}</td>
+                <td>{{ inquiry.inquiry_type }}</td>
+                <td>{{ inquiry.message }}</td>
+                <td>{{ inquiry.created_at|date:"d M Y, H:i" }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+{% endblock %}
